@@ -41,6 +41,12 @@ const HomePage = () => {
             <button className="px-6 py-2 border border-white text-white rounded-lg font-semibold hover:bg-white hover:text-black transition ease-in">
               Mas Informacion
             </button>
+            <Link
+              to="/reservs"
+              className="px-6 py-2 bg-orange-500 text-white rounded-lg font-semibold hover:bg-orange-700 transition ease-in"
+            >
+              Calendario
+            </Link>
           </div>
         </div>
       </div>
