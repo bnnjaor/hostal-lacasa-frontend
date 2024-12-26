@@ -32,6 +32,7 @@ export const RoomProvider = ({ children }) => {
   const getRoom = async (id) => {
     try {
       const res = await getOneRoomRequest(id);
+      console.log(id)
       return res.data;
     } catch (error) {
       console.log(error);

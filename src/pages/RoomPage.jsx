@@ -7,6 +7,7 @@ const RoomPage = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const params = useParams();
   const { getRoom } = useRoom();
+  console.log(params)
 
   useEffect(() => {
     if (params.id) {

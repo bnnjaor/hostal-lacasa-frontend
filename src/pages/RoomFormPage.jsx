@@ -24,6 +24,7 @@ const RoomFormPage = () => {
           setValue("number", response.number);
           setValue("price", response.price);
           setValue("description", response.description);
+          setValue("people",response.people)
         }
       };
       loadRoom();
@@ -35,6 +36,8 @@ const RoomFormPage = () => {
     formData.append("number", data.number);
     formData.append("price", data.price);
     formData.append("description", data.description);
+    formData.append("people",data.people)
+    console.log(data)
     
     // Agrega cada archivo de imagen al FormData
     if (data.image) {
@@ -119,6 +122,20 @@ const RoomFormPage = () => {
             />
             {errors.description && (
               <p className="text-red-500">{errors.description.message}</p>
+            )}
+          </div>
+          <div>
+            <label className="font-bold text-xl" htmlFor="price">
+              Personas
+            </label>
+            <input
+              type="number"
+              {...register("people", { required: "La cantidad de personas es requerido" })}
+              placeholder="Cantidad de Personas"
+              className="w-full bg-slate-50 px-4 py-2 rounded-md my-2"
+            />
+            {errors.people && (
+              <p className="text-red-500">{errors.people.message}</p>
             )}
           </div>
 

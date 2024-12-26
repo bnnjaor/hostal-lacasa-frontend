@@ -1,7 +1,6 @@
 import { useRoom } from "../context/RoomContext";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom"
 import { useAuth } from "../context/AuthContext";
-
 const RoomCard = ({ room }) => {
   const { deleteRoom } = useRoom();
   const { user } = useAuth();
@@ -12,7 +11,8 @@ const RoomCard = ({ room }) => {
       {room.images && room.images.length && (
         <img
           src={room.images[0].secure_url} // Usa la primera imagen si está disponible
-          width={300}
+          // Usa una altura de 300px
+          className="w-72 h-72 object-cover"
           alt={`Habitación ${room.number}`}
         />
       )}
